@@ -1,17 +1,29 @@
-let count = 0;
-
-const CURRENT_NUMBER = document.getElementById('currentNumber');
+let currentNumberWrapper = document.getElementById("currentNumber");
+let currentNumber = 0;
 
 function increment() {
-	count++;
-	CURRENT_NUMBER.innerHTML = count;
+    currentNumber += 1;
+    currentNumberWrapper.innerHTML = currentNumber;
+    
+    if(currentNumber > 10) {
+        currentNumber = 0;
+        currentNumberWrapper.innerHTML = currentNumber;
+    }
+    if (currentNumber >= 0) {
+        currentNumberWrapper.style.color = '#008000'
+    }
 }
 
 function decrement() {
-	count--;
-	CURRENT_NUMBER.innerHTML = count;
-}
+    currentNumber -= 1;
+    currentNumberWrapper.innerHTML = currentNumber;
 
-function test() {
-	kdowkdpo;
+    if(currentNumber < -10) {
+        currentNumber = 0;
+        currentNumberWrapper.innerHTML = currentNumber;
+    }
+
+    if(currentNumber < 0) {
+        currentNumberWrapper.style.color = '#ff0000'
+    }
 }
